@@ -1,0 +1,20 @@
+.sidebar {
+    height: 100%;
+    width: 30vw;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.my-albums {
+    height: 20%;
+    /* overflow: scroll; */
+}
+.album-button {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
