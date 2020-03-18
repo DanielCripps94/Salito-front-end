@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import Main from './containers/Main';
-import SignInForm from './components/SignInForm';
+import SignInForm from './components/auth/SignInForm';
 import API from './API';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-// import SignInForm from '../components/SignInForm';
+import SignUpForm from '../src/components/auth/SignUpForm'
 import Header from '../src/components/navbar/Header'
 import Landing from './components/landing/Landing'
 import Home from './components/home/Home'
 
 class App extends Component {
 	state = {
-		user: null
+		user: null,
+		modalOpen: false
 	};
 
 	componentDidMount() {
@@ -26,7 +27,14 @@ class App extends Component {
 			user
 		});
 		localStorage.token = token;
+		// console.log(user);
 	};
+
+	toggleModal = () => {
+		this.setState({
+			modalOpen:  !this.state.modalOpen
+		})
+	}
 
 	render() {
 		const { user } = this.state;
@@ -34,8 +42,11 @@ class App extends Component {
 		return (
 			<Fragment>
 				<BrowserRouter>
-					<Header />
-					<Route exact path="/" component={Landing} />
+					<Header toggleModal={this.toggleModal} />
+					{/* <SignUpForm/> */}
+					<Route exact path="/">
+						<Landing modalOpen={this.state.modalOpen} signIn={this.signIn}/>
+					</Route>
 					<Route exact path="/home" component={Home} />
 				</BrowserRouter>
 			</Fragment>

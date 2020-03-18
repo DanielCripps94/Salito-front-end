@@ -1,7 +1,7 @@
 .sidebar {
     height: 100%;
     width: 30vw;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     justify-content: space-around;
     align-items: center;

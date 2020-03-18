@@ -1,5 +1,6 @@
 const baseURL = 'http://localhost:3000';
 const signInURL = `${baseURL}/signin`;
+// const signUpURL = `${baseURL}/signup`;
 const validateURL = `${baseURL}/validate`;
 const get = (url, token) => {
 	return token ? fetch(url, { headers: { AUTHORIZATION: token } }) : fetch(url);
@@ -21,8 +22,12 @@ const signIn = body => {
 	return post(signInURL, body).then(response => response.json());
 };
 
+const signUp = body => {
+	return post(signInURL, body).then(response => response.json());
+};
+
 const validate = token => {
 	return get(validateURL, token).then(response => response.json());
 };
 
-export default { signIn, validate };
+export default { signIn, signUp, validate };

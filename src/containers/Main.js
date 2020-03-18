@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
-import SignInForm from '../components/SignInForm';
+import SignInForm from '../components/auth/SignInForm';
 import Header from '../components/navbar/Header'
 
 class Main extends Component {
