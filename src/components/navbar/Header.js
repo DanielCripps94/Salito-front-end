@@ -8,6 +8,8 @@ const Header = (props) => {
             <div className="about">About</div>
             <div className="albums">Albums</div>
             <div className="login" onClick={props.toggleModal}>login</div>
+            {/* <div className="login" onClick={props.toggleModal}>sign up</div> */}
+
         </nav>
     );
 }

@@ -22,13 +22,20 @@ class App extends Component {
 		}
 	}
 
+	signUp = (user, token) => {
+		this.setState({
+			user
+		});
+		localStorage.token = token;
+	}
 	signIn = (user, token) => {
 		this.setState({
 			user
 		});
 		localStorage.token = token;
-		// console.log(user);
 	};
+
+	
 
 	toggleModal = () => {
 		this.setState({
